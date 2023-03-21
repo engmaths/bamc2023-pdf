@@ -9,11 +9,12 @@
 \usepackage{hyperref}               % Hyperlinks
 \usepackage[british]{babel}         % Use British English
 \usepackage{graphicx}               % Graphics
-\usepackage[svgnames]{xcolor}       % Colours
+\usepackage[svgnames,table]{xcolor} % Colours
 \usepackage[hmargin=2cm,vmargin=2cm]{geometry} % Sort out the margins
 \usepackage{tikz}                   % Graphics primitives
 \usepackage{titlesec}               % Fancy section headings
 \usepackage{pdfpages}               % Include pages from other PDFs
+\usepackage{tabularx}               % Flexible tables
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Package settings
@@ -57,6 +58,11 @@
 
 %\pagestyle{empty}
 
+% New tabular column types for more control
+\newcolumntype{Y}{>{\footnotesize\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\footnotesize\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\footnotesize\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Begin the text
 
@@ -97,6 +103,8 @@ The BAMC is a meeting that has a central place in the UK Applied Mathematics cal
 \section{Programme Overview}
 
 \section{Minisymposia Sessions}
+
+\input{minisymposia.tex}
 
 \section{Contributed Talks Sessions}
 
